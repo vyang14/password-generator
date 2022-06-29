@@ -19,8 +19,8 @@ function writePassword() { //user input prompts
         if (wantNum === true) {
           bigPw = bigPw + numbers;
         }
-        var wantSpec = confirm("Hit OK if you wuld you like your password to include special characters.");
-        if (wantUpper === true) {
+        var wantUpper = confirm("Hit OK if you wuld you like your password to include special characters.");
+        if (wantSpec === true) {
           bigPw = bigPw + specialChars;
         }
         passArray = bigPw.split('');        
@@ -45,8 +45,7 @@ function writePassword() { //user input prompts
   console.log(passArray);
   console.log("random number " + rando);
   console.log(passArray[rando]);
-  console.log(finalPw);
-  passwordText.value = finalPw;  //output generated password to text box
+
 }
 
 function randomGenerator(bigPw, passArray){
@@ -55,10 +54,15 @@ function randomGenerator(bigPw, passArray){
 
 function generatePassword(bigPw, passArray){
 var finalPw = '';
-  for(var i = 0; i > bigPw.length; i++){    //for loop to add individual characaters to finalPw var
+  for(var i = 0; i < pwLength; i++){    //for loop to add individual characaters to finalPw var
     finalPw += randomGenerator(bigPw, passArray);
+    console.log("generatePassword has run");
   }
+console.log(finalPw);
+console.log(finalPw.length)
+passwordText.value = finalPw //output generated password to text box
 return finalPw;
+
 }
 
 generateBtn.addEventListener("click", writePassword); //click the button to run function writePassword
