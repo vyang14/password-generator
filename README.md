@@ -9,7 +9,7 @@ Vincent Yang
 * Randomly generated password will be output into the center text box
 * All input values and output values are shown in console log.
 
-* https://github.com/vyang14/password-generator
+* https://github.com/vyang14/password-generator/
 * https://vyang14.github.io/password-generator/
 
 After pressing "Generate Password" button:
