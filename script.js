@@ -35,9 +35,9 @@ function writePassword() { //user input prompts
   console.log("Uppercase: " + wantUpper);
   console.log("Numbers: " + wantNum);
   console.log("Special Characters: " + wantSpec);  
-  console.log(bigPw);
-  console.log(bigPw.length);
-  console.log(passArray);
+  console.log("Character pool: " + bigPw);
+  console.log("Total number of characters in pool: " + bigPw.length);
+  console.log("Character pool array: " + passArray);
 
   generatePassword(bigPw, passArray); 
 }
@@ -52,10 +52,10 @@ var finalPw = '';
     finalPw += randomGenerator(bigPw, passArray);
     console.log("generatePassword has run");
   }
-console.log(finalPw);
-console.log(finalPw.length)
+console.log("Final password: " + finalPw);
+console.log("Length of final password: " + finalPw.length)
 passwordText.value = finalPw //output generated password to text box
-return finalPw;
+return;
 
 }
 
