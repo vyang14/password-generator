@@ -13,15 +13,15 @@ function writePassword() { //user input prompts
     if (pwLength >= 8 && pwLength <= 128){
       var wantUpper = confirm("Hit OK if you would you like your password to include upper case characters.");
         if (wantUpper === true) {
-          bigPw = bigPw + uCase;
+          bigPw = bigPw + uCase; //adds upper case letters to character pool
         }
         var wantNum = confirm("Hit OK if you would you like your password to include numbers.");
         if (wantNum === true) {
-          bigPw = bigPw + numbers;
+          bigPw = bigPw + numbers; //adds numbers to character pool
         }
-        var wantUpper = confirm("Hit OK if you wuld you like your password to include special characters.");
+        var wantSpec = confirm("Hit OK if you wuld you like your password to include special characters.");
         if (wantSpec === true) {
-          bigPw = bigPw + specialChars;
+          bigPw = bigPw + specialChars; //adds special characters to character pool
         }
         passArray = bigPw.split('');        
     } else { //in case user inputs invalid entry
@@ -37,15 +37,9 @@ function writePassword() { //user input prompts
   console.log("Special Characters: " + wantSpec);  
   console.log(bigPw);
   console.log(bigPw.length);
-
-  generatePassword(bigPw, passArray);
- 
-  var rando = Math.floor(Math.random() * bigPw.length);
-
   console.log(passArray);
-  console.log("random number " + rando);
-  console.log(passArray[rando]);
 
+  generatePassword(bigPw, passArray); 
 }
 
 function randomGenerator(bigPw, passArray){
